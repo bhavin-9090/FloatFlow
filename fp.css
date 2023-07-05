@@ -1,0 +1,183 @@
+:root {
+    --textcol: black;
+    --backcol: white;
+    /* --textcol: #fae4bf;
+    --backcol: #353537; */
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    margin: 5px;
+    background-color: rgb(168, 168, 168);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255);
+    outline: 1px solid rgb(49, 49, 49);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(219, 173, 135);
+}
+
+body {
+    background-color: var(--backcol);
+    color: var(--textcol);
+    font-family: courier;
+    font-size: 0.9em;
+    /* font-weight: bold; */
+}
+
+select,
+input {
+    background-color: var(--backcol);
+    color: var(--textcol);
+    border: 1px solid var(--textcol);
+    border-radius: 1em;
+    padding: 2px 10px;
+    font-family: courier;
+}
+
+button {
+    color: var(--textcol);
+    background-color: var(--backcol);
+    border: 1px solid var(--textcol);
+    border-radius: 1em;
+    padding: 2px 10px;
+}
+
+#random-button {
+    padding: 1em;
+    border: 1px solid gray;
+}
+
+button:hover,
+select:hover {
+    background-color: var(--textcol);
+    color: var(--backcol);
+}
+
+.title-select {
+    appearance: none;
+    background-color: var(--backcol);
+    padding: 0em 1em;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    /* font-weight: bold; */
+    color: var(--textcol);
+    border: 1px solid var(--textcol);
+    border-radius: 1em;
+    text-align: center;
+}
+
+.title-select:hover {
+    background-color: var(--textcol);
+    color: var(--backcol);
+}
+
+
+
+.process-table {
+    padding: 0px 10px;
+    margin: 3px;
+    min-width: 100%;
+    border: 1px dashed rgb(180, 180, 180);
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.process-title {
+    /* font-weight: bold; */
+}
+
+#input-area {
+    width: 99%;
+    white-space: nowrap;
+    background-color: var(--backcol);
+    position: fixed;
+    top: 0;
+    padding: 5px;
+    box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.7);
+
+}
+
+#steps-area {
+    overflow: auto;
+    padding: 10px;
+}
+
+#result-area {
+    width: 98%;
+    background-color: var(--backcol);
+    position: fixed;
+    bottom: 0;
+    padding: 5px;
+    box-shadow: 0px -10px 10px -10px rgba(0, 0, 0, 0.7);
+}
+
+
+.binary-num {
+    color: var(--textcol);
+    border-collapse: collapse;
+    /* font-weight: normal; */
+}
+
+.binary-num td {
+    border: 1px solid black;
+    color: black;
+    padding: 0px 3px;
+}
+
+.mant-bit {
+    background-color: hsl(260 100% 90%);
+}
+
+.exp-bit {
+    background-color: hsl(100 60% 90%);
+}
+
+.sign-bit {
+    background-color: hsl(3 75% 90%);
+}
+
+.hidden-bit {
+    background-color: #d2d2d2;
+}
+
+.flip:hover {
+    cursor: pointer;
+    filter: brightness(85%);
+    border: 1px solid black;
+}
+
+
+
+.actual-num {
+    position: relative;
+    overflow-x: auto;
+    max-width: 40vw;
+}
+
+.actual-num:after {
+    position: absolute;
+    top: 0;
+    bottom: -15px;
+    left: -15px;
+    right: 0;
+    box-shadow: inset -20px -10px 10px -10px white;
+    /* x-offset y-offset blur spread , make y-offset = -blur*/
+}
+
+.binary {
+    padding: 0px;
+    margin: 0px;
+}

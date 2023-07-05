@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="fp.css" />
+
+  <title>FP Simulator</title>
+
+</head>
+
+<body onload="initialize()">
+
+  <table id="input-area">
+
+    <tr>
+      <td colspan="3">
+        <table style="font-size: 1.5em; font-weight: bold; padding-bottom: 10px; text-align: center;">
+          <tr>
+            <td>
+              <a>Floating Point</a>
+            </td>
+            <td>
+              <form action="/action_page.php">
+                <select name="format" id="operation--sel" class="title-select" onchange="changeOp()">
+                  <option value="add">Addition</option>
+                  <option value="mul">Multiplication</option>
+                </select>
+              </form>
+            </td>
+            <td>
+              <a>Simulator</a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="width: 5%;">
+        <button type="button" id="random-button" onclick="doRandomNum()">Random</button>
+      </td>
+
+      <td style="width: 70%; padding-left: 10px;">
+        <table>
+          <tr>
+            <td> <a>Number 1:</a> </td>
+            <td> <input type="number" id="num1--in" name="num1" step="any" value="0" onchange="refreshFromInput()"></td>
+            <td style="padding-left: 10px;">
+              <div class="actual-num" id="num1--actual"></div>
+            </td>
+          </tr>
+          <tr>
+            <td> <a>Number 2:</a> </td>
+            <td> <input type="number" id="num2--in" name="num2" step="any" value="0" onchange="refreshFromInput()"> </td>
+            <td style="padding-left: 10px;">
+              <div class="actual-num" id="num2--actual"></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+
+      <td style="width: 35%; padding-left: 10px;">
+        <table>
+          <tr>
+            <td colspan="2">
+              <a>Format :</a>
+              <select name="format" id="format--sel" onchange="changeFormat(this)">
+                <option value="hp">Half Precision (16-bit)</option>
+                <option value="sp">Single Precision (32-bit)</option>
+                <option value="dp">Double Precision (64-bit)</option>
+                <option disabled>──────────</option>
+                <option value="ep">Extended Precision (80-bit)</option>
+                <option value="qp">Quadrupal Precision (128-bit)</option>
+                <option value="op">Octupal Precision (256-bit)</option>
+                <option value="custom hidden" disabled="disabled">Custom</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a>Mantissa :</a>
+              <input type="number" id="mant-size" min="1" max="237" step="1" onchange="changeMantissa(this)" />
+            </td>
+            <td>
+              <a>Exponent : </a>
+              <input type="number" id="exp-size" min="1" max="19" step="1" onchange="changeExponent(this)" />
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+  </table>
+
+  <!-- <div id="input-cover"> </div> -->
+
+  <div id="steps-area" style="overflow-x: auto;">
+    <table>
+      <tr>
+        <td>
+          <table id="num1--bits" style="border-collapse: collapse;"> </table>
+          <table id="num2--bits" style="border-collapse: collapse;"> </table>
+        </td>
+      </tr>
+    </table>
+    <table id="steps-root"></table>
+  </div>
+
+  <div id="result-area">
+    <table id="num--res-bits"></table>
+    <table>
+      <tr>
+        <td>
+          <label for="num--res-out">Result :</label>
+          <input id="num--res-out" type="text" readonly>
+        </td>
+        <td>
+          <div id="num--res-actual" class="actual-num" style="max-width: 70vw;"></a>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+
+  <script src="global.js"></script>
+  <script src="arraythMatic.js"></script>
+  <script src="startup.js"></script>
+  <script src="extract.js"></script>
+  <script src="display.js"></script>
+  <script src="fp.js"></script>
+  <script src="change.js"></script>
+
+
+
+</body>
+
+</html>
