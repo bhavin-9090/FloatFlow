@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="fp.css" />
 
-  <title>FP Simulator</title>
+  <title>Float Flow</title>
 
 </head>
 
@@ -29,7 +29,7 @@
               </form>
             </td>
             <td>
-              <a>Simulator</a>
+              <a>Flow</a>
             </td>
           </tr>
         </table>
@@ -44,17 +44,18 @@
       <td style="width: 70%; padding-left: 10px;">
         <table>
           <tr>
-            <td> <a>Number 1:</a> </td>
-            <td> <input type="number" id="num1--in" name="num1" step="any" value="0" onchange="refreshFromInput()"></td>
+            <td><b>A</b></td>
+            <td style="padding-left: 10px;"> <input type="number" id="num1--in" name="num1" step="any" value="0" onchange="refreshFromInput()"></td>
             <td style="padding-left: 10px;">
-              <div class="actual-num" id="num1--actual"></div>
+              <div class="num-overflow" id="num1--actual"></div>
             </td>
           </tr>
           <tr>
-            <td> <a>Number 2:</a> </td>
-            <td> <input type="number" id="num2--in" name="num2" step="any" value="0" onchange="refreshFromInput()"> </td>
+            <td><b>B</b></td>
+            <td style="padding-left: 10px;"> <input type="number" id="num2--in" name="num2" step="any" value="0" onchange="refreshFromInput()">
+            </td>
             <td style="padding-left: 10px;">
-              <div class="actual-num" id="num2--actual"></div>
+              <div class="num-overflow" id="num2--actual"></div>
             </td>
           </tr>
         </table>
@@ -64,7 +65,7 @@
         <table>
           <tr>
             <td colspan="2">
-              <a>Format :</a>
+              <a>Format</a>
               <select name="format" id="format--sel" onchange="changeFormat(this)">
                 <option value="hp">Half Precision (16-bit)</option>
                 <option value="sp">Single Precision (32-bit)</option>
@@ -79,11 +80,11 @@
           </tr>
           <tr>
             <td>
-              <a>Mantissa :</a>
+              <a>Mantissa</a>
               <input type="number" id="mant-size" min="1" max="237" step="1" onchange="changeMantissa(this)" />
             </td>
             <td>
-              <a>Exponent : </a>
+              <a>Exponent</a>
               <input type="number" id="exp-size" min="1" max="19" step="1" onchange="changeExponent(this)" />
             </td>
           </tr>
@@ -92,8 +93,6 @@
     </tr>
 
   </table>
-
-  <!-- <div id="input-cover"> </div> -->
 
   <div id="steps-area" style="overflow-x: auto;">
     <table>
@@ -108,31 +107,23 @@
   </div>
 
   <div id="result-area">
-    <table id="num--res-bits"></table>
+    <div class="res-overflow">
+      <table id="num--res-bits"></table>
+    </div>
     <table>
       <tr>
         <td>
-          <label for="num--res-out">Result :</label>
+          <a>Result =</a>
           <input id="num--res-out" type="text" readonly>
         </td>
         <td>
-          <div id="num--res-actual" class="actual-num" style="max-width: 70vw;"></a>
+          <div id="num--res-actual" class="num-overflow" style="max-width: 70vw;"></a>
         </td>
       </tr>
     </table>
   </div>
 
-
-
-  <script src="global.js"></script>
-  <script src="arraythMatic.js"></script>
-  <script src="startup.js"></script>
-  <script src="extract.js"></script>
-  <script src="display.js"></script>
-  <script src="fp.js"></script>
-  <script src="change.js"></script>
-
-
+  <script src="fp.min.js"></script>
 
 </body>
 
