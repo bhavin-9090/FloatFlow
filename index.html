@@ -12,7 +12,7 @@
 <body onload="initialize()">
 
   <div id="header-area">
-    <div class="title-row">
+    <div id="header-area-first-child">
       <table>
         <tr>
           <td>
@@ -39,43 +39,40 @@
 
     <div>
       <div id="input-numbers">
-        <div><b>A</b></div>
-        <div> <input type="number" id="num1--in" name="num1" step="any" value="0" onchange="refreshFromInput()"></div>
+        <div><b>A</b> <input type="number" id="num1--in" name="num1" step="any" value="0" onchange="refreshFromInput()">
+        </div>
         <div class="num-overflow" id="num1--actual"></div>
-        <div><b>B</b></div>
-        <div> <input type="number" id="num2--in" name="num2" step="any" value="0" onchange="refreshFromInput()"></div>
+        <div><b>B</b> <input type="number" id="num2--in" name="num2" step="any" value="0" onchange="refreshFromInput()">
+        </div>
         <div class="num-overflow" id="num2--actual"></div>
       </div>
     </div>
 
     <div>
-      <table>
-        <tr>
-          <td colspan="2">
-            <a>Format</a>
-            <select name="format" id="format--sel" onchange="changeFormat(this)">
-              <option value="hp">Half Precision (16-bit)</option>
-              <option value="sp">Single Precision (32-bit)</option>
-              <option value="dp">Double Precision (64-bit)</option>
-              <option disabled>──────────</option>
-              <option value="ep">Extended Precision (80-bit)</option>
-              <option value="qp">Quadrupal Precision (128-bit)</option>
-              <option value="op">Octupal Precision (256-bit)</option>
-              <option value="custom hidden" disabled="disabled">Custom</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a>Mantissa</a>
-            <input type="number" id="mant-size" min="1" max="237" step="1" onchange="changeMantissa(this)" />
-          </td>
-          <td>
-            <a>Exponent</a>
-            <input type="number" id="exp-size" min="1" max="19" step="1" onchange="changeExponent(this)" />
-          </td>
-        </tr>
-      </table>
+      <div id="input-format">
+        <div>
+          <a>Format</a>
+          <select name="format" id="format--sel" onchange="changeFormat(this)">
+            <option value="hp">Half Precision (16-bit)</option>
+            <option value="sp">Single Precision (32-bit)</option>
+            <option value="dp">Double Precision (64-bit)</option>
+            <option disabled>──────────</option>
+            <option value="ep">Extended Precision (80-bit)</option>
+            <option value="qp">Quadrupal Precision (128-bit)</option>
+            <option value="op">Octupal Precision (256-bit)</option>
+            <option value="custom hidden" disabled="disabled">Custom</option>
+          </select>
+        </div>
+        <div>
+          <a>Mantissa</a>
+          <input type="number" id="mant-size" min="1" max="237" step="1" onchange="changeMantissa(this)" />
+        </div>
+        <div>
+          <a>Exponent</a>
+          <input type="number" id="exp-size" min="1" max="19" step="1" onchange="changeExponent(this)" />
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -98,7 +95,7 @@
     <table>
       <tr>
         <td>
-          <a>Result =</a>
+          <a>Result</a>
           <input id="num--res-out" type="text" readonly>
         </td>
         <td>
