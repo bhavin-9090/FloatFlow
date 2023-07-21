@@ -1,6 +1,6 @@
 # FloatFlow
 
-This visualizer provides a step-by-step breakdown of floating-point arithmetic operations, making them easier to understand for anyone curious about learning floating-point arithmetic.
+This visualizer provides a step-by-step breakdown of floating-point arithmetic operations, making them easier to understand for anyone curious about learning it.
 
 #### Key Features
 
